@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recommendations - GiftWell</title>
+<!-- button to go to cart page -->
+   <button onclick="window.location.href='cart.html'">Your carts
+</button>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .recommendations-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .recommendations-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .gift-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .gift-card {
+            background-color: white;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .gift-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .gift-card h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        .gift-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .gift-card button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            margin-top: 50px;
+        }
+        /* Back to Explore button styling */
+        .back-to-explore-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<!-- In recommendation.html, add this button to each gift card -->
+<button onclick="window.location.href='payment.html'">Proceed to Payment</button>
+<body>
+
+<header>
+    <h1>Recommended Gifts</h1>
+    <nav class="navbar">
+        <ul>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+            <li><a href="order_history.html">Order History</a></li>
+            <li><a href="index.html" onclick="handleLogout()">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="recommendations-content">
+    <h2>Gift Recommendations Just for You</h2>
+    <div class="gift-list">
+        <!-- Sample gift cards -->
+        <div class="gift-card">
+            <img src="gift_image1.jpg" alt="Gift Image 1">
+            <h3>Set Of Jewelry</h3>
+            <p>Perfect for any occasion! Thoughtfully selected just for you.</p>
+            <button onclick="addToWishlist('Gift Name 1')">Add to Wishlist</button>
+        </div>
+        <div class="gift-card">
+            <img src="gift_image2.jpg" alt="Gift Image 2">
+            <h3>Picture Frame</h3>
+            <p>A special gift to brighten up your loved one's day!</p>
+            <button onclick="addToWishlist('Gift Name 2')">Add to Wishlist</button>
+
+
+        </div>
+        <!-- Add more gift cards as needed -->
+    </div>
+
+
+    <!-- Button to navigate back to Explore page -->
+    <button onclick="window.location.href='explore.html'" class="back-to-explore-btn">
+        Back to explore
+    </button>
+</section>
+
+<footer>
+    &copy; 2024 GiftWell. All rights reserved.
+</footer>
+
+<script>
+    // Function to add a gift to the wishlist
+    function addToWishlist(giftName) {
+        alert(`${giftName} has been added to your wishlist!`);
+    }
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explore - GiftWell</title>
+
+
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .category-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .category-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .category-list a {
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 5px;
+            width: 150px;
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Style for the Recommendations button */
+        .recommendations-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            margin-top: 50px;
+        }
+    </style>
+
+<!-- button to go to cart page -->
+   <button onclick="window.location.href='cart.html'">Your carts
+</button>
+
+</head>
+<!-- In recommendation.html, add this button to each gift card -->
+<button onclick="window.location.href='payment.html'">Proceed to Payment</button>
+<body>
+    <header>
+        <h1>Explore GiftWell</h1>
+        <nav class="navbar">
+            <ul id="nav-links">
+                <!-- Links will be populated by JavaScript based on login status -->
+            </ul>
+        </nav>
+    </header>
+
+    <section class="categories">
+        <h2>Shop by Category</h2>
+        <div class="category-list">
+            <a href="category_tech.html">Tech</a>
+            <a href="category_fashion.html">Fashion</a>
+            <a href="category_birthday.html">Birthday</a>
+            <a href="category_anniversary.html">Anniversary</a>
+        </div>
+
+
+
+
+        <!-- Button to go to Recommendations page -->
+      <button onclick="window.location.href='recommendation.html'">View Recommendations
+        </button>
+    </section>
+
+    <footer>
+        &copy; 2024 GiftWell. All rights reserved.
+    </footer>
+
+    <script>
+        // Check if the user is logged in
+        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+        const navLinks = document.getElementById("nav-links");
+
+        if (isLoggedIn) {
+            // Show logged-in navigation
+            navLinks.innerHTML = `
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="order_history.html">Order History</a></li>
+                <li><a href="#" onclick="handleLogout()">Logout</a></li>
+            `;
+        } else {
+            // Show login/signup options
+            navLinks.innerHTML = `
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            `;
+        }
+
+        // Logout function
+        function handleLogout() {
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>

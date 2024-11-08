@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Suggestions</title>
+    <link rel="stylesheet" href="styles.css">
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+
+        header {
+            background-color: #007bff; /* Blue color for the header */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .category-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .category-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .category-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .category-item {
+            background-color: #f1f1f1; /* Light background for each item */
+            padding: 20px;
+            border-radius: 8px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #007bff; /* Footer matches header color */
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gift Recommendations</h1>
+        <button onclick="location.href='explore.html'">Back to Explore</button>
+    </header>
+
+    <section class="gifts-section">
+        <h2>Suggested Gifts for You</h2>
+        <ul class="gift-list">
+            <li>Gift Card</li>
+            <li>Personalized Mug</li>
+            <li>Sports Equipment</li>
+            <li>Books</li>
+            <li>Music Accessories</li>
+            <li>Customized Jewelry</li>
+            <li>Board Games</li>
+        </ul>
+    </section>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversary Gifts</title>
+    <link rel="stylesheet" href="styles.css">
+<!-- button to go to cart page -->
+   <button onclick="window.location.href='cart.html'">Your carts
+</button>
+<!-- In recommendation.html, add this button to each gift card -->
+<button onclick="window.location.href='payment.html'">Proceed to Payment</button>
+ <style>
+      /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #007bff;
+    padding: 1em;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #0056b3;
+}
+
+/* Hero Section */
+.hero-tech, .hero-birthday, .hero-anniversary, .hero-fashion {
+    text-align: center;
+    padding: 3em 1em;
+    background-size: cover;
+    color: white;
+}
+
+.hero-tech {
+    background-image: url('tech_background.jpg');
+    background-color: #333; /* fallback for no image */
+}
+
+.hero-birthday {
+    background-image: url('birthday_background.jpg');
+    background-color: #f78fb3; /* fallback for no image */
+}
+
+.hero-anniversary {
+    background-image: url('anniversary_background.jpg');
+    background-color: #ffafcc; /* fallback for no image */
+}
+
+.hero-fashion {
+    background-image: url('fashion_background.jpg');
+    background-color: #ff8b6a; /* fallback for no image */
+}
+
+.hero-tech h1, .hero-birthday h1, .hero-anniversary h1, .hero-fashion h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.hero-tech p, .hero-birthday p, .hero-anniversary p, .hero-fashion p {
+    font-size: 1.2em;
+}
+
+/* Gift Items Grid */
+section.tech-gifts, section.birthday-gifts, section.anniversary-gifts, section.fashion-gifts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    padding: 2em;
+    justify-content: center;
+}
+
+.gift-item {
+    width: 200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.gift-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.gift-item h3 {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+    color: #333;
+}
+
+.gift-item p {
+    font-size: 0.9em;
+    padding: 0 1em 1em;
+    color: #666;
+}
+
+.gift-item:hover {
+    transform: translateY(-5px);
+}
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+            const loginButton = document.getElementById("loginButton");
+            const signupButton = document.getElementById("signupButton");
+            const logoutButton = document.getElementById("logoutButton");
+
+            if (isLoggedIn === "true") {
+                loginButton.style.display = "none";
+                signupButton.style.display = "none";
+                logoutButton.style.display = "block";
+            } else {
+                loginButton.style.display = "block";
+                signupButton.style.display = "block";
+                logoutButton.style.display = "none";
+            }
+
+            logoutButton.addEventListener("click", function() {
+                localStorage.removeItem("isLoggedIn");
+                window.location.href = "index.html";
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="explore.html">Explore</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="login.html" id="loginButton">Login</a></li>
+            <li><a href="signup.html" id="signupButton">Sign Up</a></li>
+            <li><a href="#" id="logoutButton" style="display: none;">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-anniversary">
+        <h1>Anniversary Gifts</h1>
+        <p>Celebrate love with memorable anniversary gifts!</p>
+    </section>
+
+    <section class="anniversary-gifts">
+        <div class="gift-item">
+            <img src="anniversary_gift1.jpg" alt=" Bracelets">
+            <h3> Bracelets</h3>
+            <p>Elegant bracelets to cherish forever.</p>
+        </div>
+       
+        <div class="gift-item">
+            <img src="anniversary_gift2.jpg" alt="Personlized frame">
+            <h3>Personalized Picture Frame</h3>
+            <p>Capture memories with a personalized picture frame.</p>
+        </div>
+        <div class="gift-item">
+            <img src="anniversary_gift3.jpg"   <h3>Wine & Chocolates</h3>
+            <p>A sweet treat to celebrate love.</p>
+        </div>
+    </section>
+
+</body>
+</html>

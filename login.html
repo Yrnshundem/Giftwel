@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - GiftWell</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        /* Login section styling */
+        .login-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .login-section form {
+            width: 300px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-section label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        .login-section input[type="email"],
+        .login-section input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .login-section button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .login-section button:hover {
+            background-color: #0056b3;
+        }
+
+        .extra-options {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .social-login {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-login button {
+            flex: 1;
+            padding: 10px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .facebook { background-color: #3b5998; }
+        .google { background-color: #db4437; }
+        .apple { background-color: #333; }
+
+        /* Footer styling */
+        footer {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Login</h1>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="signup.html">Sign Up</a>
+        </nav>
+    </header>
+
+    <!-- Login Section -->
+    <section class="login-section">
+        <form id="loginForm" onsubmit="validateLogin(); return false;">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Login</button>
+
+            <div class="extra-options">
+                <label><input type="checkbox" id="remember-me"> Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+
+            <div class="social-login">
+                <p>Or login with:</p>
+                <button class="facebook">Facebook</button>
+                <button class="google">Google</button>
+                <button class="apple">Apple</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 GiftWell. All rights reserved. <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        function validateLogin() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            if (!email || !password) {
+                alert("Please fill out all fields.");
+                return false;
+            }
+            // Set login flag in localStorage and redirect to explore page
+            localStorage.setItem("isLoggedIn", "true");
+            window.location.href = "explore.html";
+            return false;
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

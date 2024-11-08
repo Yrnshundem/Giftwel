@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - GiftWell</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        /* Sign-up container styling */
+        .signup-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="password"], input[type="email"], input[type="date"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .signup-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .signup-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Social media buttons styling */
+        .social-signup {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 10px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .facebook-btn {
+            background-color: #3b5998;
+        }
+
+        .google-btn {
+            background-color: #db4437;
+        }
+
+        .apple-btn {
+            background-color: #333;
+        }
+
+        /* Footer styling */
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Navigation -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </nav>
+    </header>
+
+    <!-- Sign-up Form Container -->
+    <div class="signup-container">
+        <h2>Create an Account</h2>
+        <form onsubmit="handleSignupSuccess(); return false;">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+            <input type="date" placeholder="Birthdate" required>
+            <select required>
+                <option value="" disabled selected>Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <button type="submit" class="signup-btn">Sign Up</button>
+        </form>
+
+        <!-- Social Media Sign-up Buttons -->
+        <div class="social-signup">
+            <button class="social-btn facebook-btn">Facebook</button>
+            <button class="social-btn google-btn">Google</button>
+            <button class="social-btn apple-btn">Apple</button>
+        </div>
+    </div>
+
+    <!-- Footer with Terms of Service -->
+    <footer>
+        <p>&copy; 2024 GiftWell. All rights reserved. <a href="terms.html">Terms of Service</a></p>
+    </footer>
+
+    <script>
+        function handleSignupSuccess() {
+            // Simulate successful signup
+            localStorage.setItem("loggedIn", "true");
+            window.location.href = "explore.html"; // Redirect to explore page after signup
+        }
+    </script>
+</body>
+</html>

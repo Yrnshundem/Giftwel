@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="recommendation.html">View Recommendation</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <title>Your Wishlist - GiftWell</title>
+</head>
+  <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        /* Sign-up container styling */
+        .signup-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"], input[type="password"], input[type="email"], input[type="date"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .signup-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .signup-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Social media buttons styling */
+        .social-signup {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 10px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .facebook-btn {
+            background-color: #3b5998;
+        }
+
+        .google-btn {
+            background-color: #db4437;
+        }
+
+        .apple-btn {
+            background-color: #333;
+        }
+
+        /* Footer styling */
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+<body>
+    <header>
+        <h1>Your Wishlist</h1>
+    </header>
+
+    <section id="wishlist-container">
+        <!-- Wishlist items will be loaded here -->
+    </section>
+
+
+    <script>
+  const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        const wishlistItems = document.getElementById('wishlistItems');
+
+        wishlist.forEach(item => {
+            let li = document.createElement('li');
+            li.textContent = item;
+            wishlistItems.appendChild(li);
+        });
+    
+        // Load wishlist from localStorage
+        function loadWishlist() {
+            const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+            const wishlistContainer = document.getElementById("wishlist-container");
+
+            if (wishlist.length > 0) {
+                wishlist.forEach(giftName => {
+                    const item = document.createElement("div");
+                    item.textContent = giftName;
+                    wishlistContainer.appendChild(item);
+                });
+            } else {
+                wishlistContainer.textContent = "Your wishlist is empty.";
+            }
+        }
+
+        // Call loadWishlist when the page loads
+        window.onload = loadWishlist;
+    </script>
+</body>
+</html>

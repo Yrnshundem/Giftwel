@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - GiftWell</title>
+    <link rel="stylesheet" href="styles.css">
+<!-- button to go to cart page -->
+   <button onclick="window.location.href='cart.html'">Your carts
+</button>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+
+        header {
+            background-color: #007bff; /* Blue color for the header */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .category-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .category-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .category-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .category-item {
+            background-color: #f1f1f1; /* Light background for each item */
+            padding: 20px;
+            border-radius: 8px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #007bff; /* Footer matches header color */
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            margin-top: 50px;
+        }
+    </style>
+
+<div class="profile-actions">
+    <a href="recommendation.html" class="button">View Recommended Gifts</a>
+</div>
+<script>
+    function logout() {
+        localStorage.removeItem("isLoggedIn");
+        window.location.href = "index.html"; // Redirect to the index page after logout
+    }
+</script>
+<script>
+    if (localStorage.getItem("isLoggedIn") !== "true") {
+        alert("You need to log in to access this page.");
+        window.location.href = "login.html"; // Redirect to the login page if not logged in
+    }
+</script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>GiftWell</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile_edit.html">Edit Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Profile Display Section -->
+    <section class="profile-display">
+        <h2>Your Profile</h2>
+
+        <!-- User Information -->
+        <div class="user-info">
+            <h3>User Information</h3>
+            <p><strong>Name:</strong> Jude Nii Tettey</p>
+            <p><strong>Email:</strong> Yrnshundem53@gmail.com</p>
+            <p><strong>Birthdate:</strong> October, 03 2002</p>
+            <p><strong>Gender:</strong> Male</p>
+        </div>
+
+        <!-- Address Information -->
+        <div class="address-info">
+            <h3>Address Information</h3>
+            <p><strong>Street:</strong> North Legon</p>
+            <p><strong>City:</strong> Accra</p>
+            <p><strong>State/Province:</strong> Ghana</p>
+            <p><strong>Postal Code:</strong> 00233</p>
+            <p><strong>Country:</strong> Ghana</p>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="phone-info">
+            <h3>Phone Number</h3>
+            <p><strong>Phone:</strong> +233(0)549901295)</p>
+        </div>
+
+
+        <!-- Order History -->
+        <div class="order-history">
+            <h3>Order History</h3>
+            <ul>
+                <li>Order #001 - Birthday Gift - $50</li>
+                <li>Order #002 - Anniversary Gift - $75</li>
+                <!-- Add more orders as needed -->
+            </ul>
+        </div>
+
+        <!-- Wishlist -->
+        <div class="wishlist">
+            <h3>Wishlist</h3>
+            <ul>
+                <li>Smart Watch</li>
+                <li>Designer Bag</li>
+                <!-- Add more wishlist items as needed -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 GiftWell. All rights reserved. | <a href="#">Terms of Service</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - GiftWell</title>
+    <link rel="stylesheet" href="styles.css">
+<!-- In recommendation.html, add this button to each gift card -->
+<button onclick="window.location.href='payment.html'">Proceed to Payment</button>
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+
+        header {
+            background-color: #007bff; /* Blue color for the header */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        .category-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .category-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+        }
+
+        .category-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .category-item {
+            background-color: #f1f1f1; /* Light background for each item */
+            padding: 20px;
+            border-radius: 8px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #007bff; /* Footer matches header color */
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="gifts.html">Gifts</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Your Cart</h1>
+        <ul id="cartItems"></ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 GiftWell</p>
+    </footer>
+    <script>
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartItems = document.getElementById('cartItems');
+
+        cart.forEach(item => {
+            let li = document.createElement('li');
+            li.textContent = item;
+            cartItems.appendChild(li);
+        });
+    </script>
+</body>
+</html>
